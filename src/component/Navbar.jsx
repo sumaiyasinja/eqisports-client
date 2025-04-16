@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
@@ -12,6 +12,12 @@ const Navbar = () => {
       <NavLink  to="/" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Add Equipment</NavLink>
       <NavLink  to="/" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">My Equipment List</NavLink>
   </>
+
+  const handleSignOut = () => {
+    logOut()
+    
+  };
+
   return (
     <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50 dark:bg-gray-900">
       <nav className="z-10 sticky top-0 left-0 right-0 max-w-5xl xl:max-w-7xl mx-auto px-5 py-2.5 lg:border-none lg:py-4">
@@ -29,14 +35,26 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="hidden lg:flex lg:items-center gap-x-2">
-            <button className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
-              Sign up
+         {
+          user ? <>
+           <div className="hidden lg:flex lg:items-center gap-x-2">
+            <button onAbort={handleSignOut}  className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
+            Sign Out
             </button>
-            <button className="flex items-center justify-center rounded-md bg-[#4A3BFF] text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">
-              Login
-            </button>
+            
           </div>
+          </>: 
+          <>
+           <div className="hidden lg:flex lg:items-center gap-x-2">
+            <NavLink to="/register" className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
+              Sign up
+            </NavLink>
+            <NavLink to="/login" className="flex items-center justify-center rounded-md bg-[#4A3BFF] text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">
+            Sign in
+            </NavLink>
+          </div>
+          </>
+         }
 
           <div className="flex items-center justify-center lg:hidden">
             <button className="focus:outline-none text-slate-200 dark:text-white">

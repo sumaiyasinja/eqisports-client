@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
-import axios from "axios";
 import { auth } from "../../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
 

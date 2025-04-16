@@ -1,6 +1,6 @@
 export const Footer = () => {
     return (
-      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className=" pt-16 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="">
             <a
@@ -11,7 +11,7 @@ export const Footer = () => {
             >
              
               <h2 className="text-black dark:text-white font-bold text-2xl">
-              Equi<span className="text-blue-900">Sports</span>
+              Equi<span className="text-purple-800">Sports</span>
             </h2>
             </a>
           </div>

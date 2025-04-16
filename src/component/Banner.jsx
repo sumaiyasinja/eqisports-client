@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -63,12 +64,15 @@ const Banner = () => {
               <p className="font-bold text-sm uppercase">EquiSports</p>
               <p className="text-3xl font-bold">{slide.title}</p>
               <p className="text-2xl mb-10 leading-none">{slide.subtitle}</p>
-              <a
+              {/* <a
                 href="#"
                 className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
               >
                 Shop Now
-              </a>
+              </a> */}
+              <Link to="/allEquipment" className=" rounded-md uppercase bg-purple-800 hover:bg-white hover:text-purple-800 text-white py-4 px-8 text-xs font-bold hover:shadow-lg hover:drop-shadow transition duration-200">
+              Shop Now
+              </Link>
             </div>
           </div>
           <br />

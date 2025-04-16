@@ -1,14 +1,15 @@
-import React from 'react';
-import Navbar from '../../component/Navbar';
-import { Footer } from '../../component/Footer';
+import { useLoaderData } from 'react-router-dom';
 import Banner from '../../component/Banner';
+import EquipmentSection from '../../component/EquipmentSection';
+
 
 const Home = () => {
+    const equipments = useLoaderData();
+
     return (
         <div>
-            <Navbar />
             <Banner></Banner>
-            <Footer />
+            <EquipmentSection equipments={equipments}/>
         </div>
     );
 };

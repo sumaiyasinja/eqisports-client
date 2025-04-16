@@ -30,26 +30,37 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    googleSignIn()
-        .then(() => {
-            toast.success("Successfully logged in");
-            const user = {
-                name : auth?.currentUser?.displayName,
-                email : auth?.currentUser?.email,
-                photoURL : auth?.currentUser?.photoURL
-            }
-            
-            // POST request to backend
-            // axios.post("http://localhost:5000/users",user)
-            // .then (res => console.log(res))
-            // .catch(err => console.log(err))  
-            // navigate 
-            navigate(location?.state || "/");
-        })
-        .catch((error) => {
-            toast.error(error.message);
-        });
-};
+        googleSignIn()
+            .then(() => {
+                toast.success("Successfully logged in");
+                const user = {
+                    name : auth?.currentUser?.displayName,
+                    email : auth?.currentUser?.email,
+                    photoURL : auth?.currentUser?.photoURL
+                }
+                
+                // POST request to backend
+                fetch("http://localhost:5000/users", {
+                    method: "POST", 
+                    headers: {
+                        "Content-Type": "application/json",
+                    }  ,
+                    body: JSON.stringify(user),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.insertedId) {
+                        toast.success("User added successfully!");
+                    } else {
+                        toast.error("User already exists!");
+                    }
+                })
+                navigate(location?.state || "/");
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
+    };
 
   return (
     <div>

@@ -21,12 +21,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50 dark:bg-gray-900">
+    <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50  dark:bg-gray-900">
       <nav className="z-10 sticky top-0 left-0 right-0 max-w-5xl xl:max-w-7xl mx-auto px-5 py-2.5 lg:border-none lg:py-4">
         <div className="flex items-center justify-between">
           <button>
             <div className="flex items-center space-x-2">
-              <h2 className="text-black dark:text-white font-bold text-2xl">Equi<span className="text-blue-900">Sports</span></h2>
+              <h2 className="text-black dark:text-white font-bold text-2xl">Equi<span className="text-purple-800">Sports</span></h2>
             </div>
           </button>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
          {
           user ? <>
            <div className="hidden lg:flex lg:items-center gap-x-2">
-            <button onClick={handleSignOut}  className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
+            <button onClick={handleSignOut}  className="flex items-center cursor-pointer justify-center rounded-md bg-purple-800 hover:bg-white hover:text-purple-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">
             Sign Out
             </button>
             
@@ -48,10 +48,10 @@ const Navbar = () => {
           </>: 
           <>
            <div className="hidden lg:flex lg:items-center gap-x-2">
-            <NavLink to="/register" className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
+            <NavLink to="/register" className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 rounded-md hover:bg-purple-800 hover:text-white  font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">
               Sign up
             </NavLink>
-            <NavLink to="/login" className="flex items-center justify-center rounded-md bg-[#4A3BFF] text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">
+            <NavLink to="/login" className="flex items-center justify-center rounded-md bg-purple-800 hover:bg-white hover:text-purple-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">
             Sign in
             </NavLink>
           </div>

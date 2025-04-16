@@ -81,7 +81,7 @@ const Register = () => {
                 }
                 
                 // POST request to backend
-                /fetch("http://localhost:5000/users", {
+                fetch("http://localhost:5000/users", {
                     method: "POST", 
                     headers: {
                         "Content-Type": "application/json",

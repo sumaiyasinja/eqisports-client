@@ -44,11 +44,24 @@ const Register = () => {
                 toast.success("Successfully registered");
                 updateProfile(auth.currentUser, { displayName: name, photoURL: photoURL })
                 // POST request to backend
-                // axios.post("http://localhost:5000/users",user)
-                // .then (res => console.log(res))
-                // .catch(err => console.log(err))             
+                       
+                fetch("http://localhost:5000/users", {
+                    method: "POST", 
+                    headers: {
+                        "Content-Type": "application/json",
+                    }  ,
+                    body: JSON.stringify(user),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.insertedId) {
+                        toast.success("User added successfully!");
+                    } else {
+                        toast.error("User already exists!");
+                    }
+                })
               
-                //reset
+                // reset
                 form.reset();
                 navigate(location?.state || "/");
             })
@@ -68,10 +81,21 @@ const Register = () => {
                 }
                 
                 // POST request to backend
-                // axios.post("http://localhost:5000/users",user)
-                // .then (res => console.log(res))
-                // .catch(err => console.log(err))  
-                // navigate 
+                /fetch("http://localhost:5000/users", {
+                    method: "POST", 
+                    headers: {
+                        "Content-Type": "application/json",
+                    }  ,
+                    body: JSON.stringify(user),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.insertedId) {
+                        toast.success("User added successfully!");
+                    } else {
+                        toast.error("User already exists!");
+                    }
+                })
                 navigate(location?.state || "/");
             })
             .catch((error) => {

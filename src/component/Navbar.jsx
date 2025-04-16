@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
@@ -8,13 +8,15 @@ const Navbar = () => {
 
   const NavLinks = <>
       <NavLink  to="/" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Home</NavLink>
-      <NavLink  to="/" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">All Sports Equipment</NavLink>
-      <NavLink  to="/" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Add Equipment</NavLink>
-      <NavLink  to="/" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">My Equipment List</NavLink>
+      <NavLink  to="/allEquipment" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">All Sports Equipment</NavLink>
+      <NavLink  to="/addEquipment" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Add Equipment</NavLink>
+      <NavLink  to="/myAddedEquipment" className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">My Equipment List</NavLink>
   </>
 
   const handleSignOut = () => {
     logOut()
+    .then(() => {console.log("Sign out successful")})
+    .catch((error) => {console.error(error)});
     
   };
 
@@ -38,7 +40,7 @@ const Navbar = () => {
          {
           user ? <>
            <div className="hidden lg:flex lg:items-center gap-x-2">
-            <button onAbort={handleSignOut}  className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
+            <button onClick={handleSignOut}  className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">
             Sign Out
             </button>
             

@@ -29,7 +29,7 @@ const AddEquipmentForm = () => {
             console.log('Success:', data);
             if (data.insertedId) {
             toast.success('Equipment added successfully!');
-            // reset(); 
+            reset(); 
             }
         })
         .catch((error) => {
@@ -67,8 +67,8 @@ const AddEquipmentForm = () => {
         />
         <input
           type="number"
-          step="0.01"
-          placeholder="Price"
+          step="1"
+          placeholder="Price (in USD)"
           {...register("price", { required: true })}
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
         />

@@ -6,6 +6,9 @@ import Login from "../pages/Login/Login";
 import Register from './../pages/Register/Register';
 import AllEquipment from './../pages/AllEquipment/AllEquipment';
 import AddEquipment from "../pages/AddEquipment/AddEquipment";
+import EquipmentDetails from "../pages/EquipmentDetails.jsx/EquipmentDetails";
+import UpdateEquipment from './../pages/UpdateEquipment/UpdateEquipment';
+import MyEquipments from "../pages/MyEquipments/MyEquipments";
   
 const router = createBrowserRouter([
     {
@@ -30,11 +33,24 @@ const router = createBrowserRouter([
         path: "/addEquipment",
         element: <AddEquipment />,
       },
-      // {
-      //   path: "/equipment/:id",
+      {
+        path: "/equipments/by-email/:email",
+        element: <MyEquipments />,
+        loader: ({ params }) =>fetch(`http://localhost:5000/equipments/by-email/${params.email}`)
+      },
       
+      {
+        path: "/equipments/:id",
+        element : <EquipmentDetails />,
+        loader: ({params})=> fetch(`http://localhost:5000/equipments/${params.id}`)
         
-      // },
+      },
+      {
+        path: "/equipments/update/:id",
+        element : <UpdateEquipment />,
+        loader: ({params})=> fetch(`http://localhost:5000/equipments/${params.id}`)
+        
+      },
       
       {
         path: "/allEquipment",

@@ -37,7 +37,7 @@ const Navbar = () => {
         Add Equipment
       </NavLink>
       <NavLink
-        to="/myAddedEquipment"
+        to={`/equipments/by-email/${user?.email}`}
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
         My Equipment List

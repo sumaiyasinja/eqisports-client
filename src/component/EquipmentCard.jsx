@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 const EquipmentCard = ({equipment}) => {
-    const {itemName, image,categoryName, description, price,rating, customization, processingTime, stockStatus, seller_name} = equipment;
+    const {itemName, image,price,rating,  stockStatus, seller_name} = equipment;
     return (
-        <div className="max-w-sm bg-white rounded-lg shadow-lg hover:shadow-gray-200 transition  dark:bg-gray-700">
+        <div className=" flex flex-col bg-white rounded-lg shadow-lg hover:shadow-gray-200 transition  dark:bg-gray-700">
         <div>
           <img
             className=" rounded-lg max-h-64 w-full py-4  mx-auto"
@@ -26,7 +27,7 @@ const EquipmentCard = ({equipment}) => {
         </div>
 
         <div className="mt-4 p-4 border-t border-gray-200 dark:border-gray-500">
-          <button className="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
+          <Link to={`/equipments/${equipment._id}`} className="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
             <span className="text-base">View details</span>
             <svg
               className="h-6 w-6"
@@ -42,7 +43,7 @@ const EquipmentCard = ({equipment}) => {
                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     );

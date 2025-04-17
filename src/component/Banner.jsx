@@ -62,8 +62,8 @@ const Banner = () => {
           >
             <div className="md:w-1/2">
               <p className="font-bold text-sm uppercase">EquiSports</p>
-              <p className="text-3xl font-bold">{slide.title}</p>
-              <p className="text-2xl mb-10 leading-none">{slide.subtitle}</p>
+              <p className="text-xl md:text-3xl font-bold">{slide.title}</p>
+              <p className="text-lg md:text-2xl mb-10 leading-none">{slide.subtitle}</p>
               {/* <a
                 href="#"
                 className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"

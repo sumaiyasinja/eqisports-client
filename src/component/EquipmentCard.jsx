@@ -13,8 +13,9 @@ const EquipmentCard = ({equipment}) => {
 
         <div className="flex flex-col gap-1 mt-4 px-4">
           <h2 className="text-lg  hover:underline font-semibold text-purple-800 dark:text-gray-50">{itemName}</h2>
-          <p className="text-gray-400 dark:text-gray-50 ">Price: <span className=" dark:text-gray-50">${price}</span></p>
-          <p className="  text-gray-400 dark:text-gray-50">{description}</p>
+          <p className="text-black-400 dark:text-gray-50 ">Price: <span className=" dark:text-black-50">${price}</span></p>
+          <p className="  text-black-400 dark:text-gray-50">Stock: {stockStatus}</p>
+          <p className="  text-black-400 dark:tgray-50">Seller: {seller_name}</p>
         </div>
 
         <div className="flex gap-1 mt-4 px-4">

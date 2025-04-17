@@ -97,12 +97,10 @@ const AddEquipmentForm = () => {
           {...register("stockStatus", { required: true })}
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
         />
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none transition-all duration-300"
-        >
-          Submit
-        </button>
+        <PrimaryButton
+          type= "submit"
+          className="flex items-center cursor-pointer justify-center rounded-md bg-purple-800 hover:bg-white hover:text-purple-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"        >
+        </PrimaryButton>
       </form>
     </div>
   );

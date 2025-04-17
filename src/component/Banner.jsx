@@ -27,7 +27,7 @@ const Banner = () => {
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://i.ibb.co.com/h1fV3xVN/2151207884.jpg",
       title: "Unleash Your Inner Champion",
       subtitle: "Top-Quality Gear for Peak Performance",
     },

@@ -55,16 +55,17 @@ const AuthProvider = ({ children }) => {
         return () => unsubscribe();
     }, []);
 
-    if (loading) {
-        return <p>Loading...</p>;
-    }
+    // if (loading) {
+    //     return <p>Loading...</p>;
+    // }
 
     const authInfo = {
         user,
         registerWithEmailPassword,
         loginWithEmailPassword,
         logOut,
-        googleSignIn
+        googleSignIn,
+        loading
     };
 
     return (

@@ -9,6 +9,7 @@ import AddEquipment from "../pages/AddEquipment/AddEquipment";
 import EquipmentDetails from "../pages/EquipmentDetails.jsx/EquipmentDetails";
 import UpdateEquipment from './../pages/UpdateEquipment/UpdateEquipment';
 import MyEquipments from "../pages/MyEquipments/MyEquipments";
+import PrivateRoutes from "./PrivateRoutes";
   
 const router = createBrowserRouter([
     {
@@ -31,23 +32,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/addEquipment",
-        element: <AddEquipment />,
+        element: <PrivateRoutes><AddEquipment /></PrivateRoutes>,
       },
       {
         path: "/equipments/by-email/:email",
-        element: <MyEquipments />,
+        element:<PrivateRoutes><MyEquipments /></PrivateRoutes> ,
         loader: ({ params }) =>fetch(`http://localhost:5000/equipments/by-email/${params.email}`)
       },
       
       {
         path: "/equipments/:id",
-        element : <EquipmentDetails />,
+        element :<PrivateRoutes> <EquipmentDetails /></PrivateRoutes>,
         loader: ({params})=> fetch(`http://localhost:5000/equipments/${params.id}`)
         
       },
       {
         path: "/equipments/update/:id",
-        element : <UpdateEquipment />,
+        element :<PrivateRoutes><UpdateEquipment /></PrivateRoutes> ,
         loader: ({params})=> fetch(`http://localhost:5000/equipments/${params.id}`)
         
       },

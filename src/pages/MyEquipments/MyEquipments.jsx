@@ -1,13 +1,53 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyEquipments = () => {
-  const equipments = useLoaderData(); // this is an array
+  const equipments = useLoaderData(); 
   console.log(equipments);
 
   const handleDelete = async (id) => {
     console.log("Deleting:", id);
-    // You can integrate DELETE API logic here
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch (`http://localhost:5000/equipments/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Delete response:", data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your equipment has been deleted.",
+                icon: "success"
+              });
+            } else {
+              Swal.fire({
+                text: "Failed to delete equipment.",
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting equipment:", error);
+          }
+        )
+       
+      }
+    });
+    
+    
   };
 
   return (

@@ -40,7 +40,7 @@ const Login = () => {
                 }
                 
                 // POST request to backend
-                fetch("http://localhost:5000/users", {
+                fetch("https://sports-equipment-shop-server.vercel.app/users", {
                     method: "POST", 
                     headers: {
                         "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const Login = () => {
 
         {/* Form Side */}
         <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%] dark:bg-zinc-900">
-          <h2 className="pb-8 text-center text-3xl font-semibold tracking-tight text-cyan-600">
+          <h2 className="pb-8 text-center text-3xl font-semibold tracking-tight text-purple-600">
             Sign In
           </h2>
 
@@ -100,14 +100,14 @@ const Login = () => {
             className="flex w-full flex-col items-center justify-center gap-4"
           >
             <input
-              className="w-[80%] rounded-lg border border-cyan-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-cyan-600/50 md:w-[60%] dark:text-zinc-400"
+              className="w-[80%] rounded-lg border border-purple-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-purple-600/50 md:w-[60%] dark:text-zinc-400"
               type="email"
               placeholder="Email"
               name="email"
               required
             />
             <input
-              className="w-[80%] rounded-lg border border-cyan-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-cyan-600/50 md:w-[60%] dark:text-zinc-400"
+              className="w-[80%] rounded-lg border border-purple-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-purple-600/50 md:w-[60%] dark:text-zinc-400"
               type="password"
               placeholder="Password"
               name="password"
@@ -115,32 +115,32 @@ const Login = () => {
             />
             <p className="text-[14px] text-gray-400">
               Do not have an account?{" "}
-              <a href="/register" className="text-cyan-600">
+              <a href="/register" className="text-purple-600">
                 Create one
               </a>
             </p>
             <input
               type="submit"
-              className="uppercase w-[80%] rounded-lg bg-cyan-600 px-6 py-2 font-medium text-white outline-none hover:bg-cyan-600 md:w-[60%]"
+              className="uppercase w-[80%] rounded-lg bg-purple-600 px-6 py-2 font-medium text-white outline-none hover:bg-purple-600 md:w-[60%]"
             />
           </form>
 
           {/* Divider */}
           <div className="my-8 flex items-center px-8">
-            <hr className="flex-1 border-cyan-600" />
-            <div className="mx-4 text-cyan-600">OR</div>
-            <hr className="flex-1 border-cyan-600" />
+            <hr className="flex-1 border-purple-600" />
+            <div className="mx-4 text-purple-600">OR</div>
+            <hr className="flex-1 border-purple-600" />
           </div>
 
           {/* Sign in with Google */}
           <button
             onClick={handleGoogleSignIn}
-            className="group mx-auto flex h-[50px] w-fit items-center overflow-hidden rounded-full shadow-md outline-none ring-1 ring-cyan-600"
+            className="group mx-auto flex h-[50px] w-fit items-center overflow-hidden rounded-full shadow-md outline-none ring-1 ring-purple-600"
           >
-            <div className="relative z-20 flex h-full items-center bg-cyan-600 px-4 text-lg text-white duration-300 group-hover:bg-transparent group-hover:text-cyan-600">
+            <div className="relative z-20 flex h-full items-center bg-purple-600 px-4 text-lg text-white duration-300 group-hover:bg-transparent group-hover:text-purple-600">
               Sign in with
             </div>
-            <span className="flex h-full items-center px-4 text-xl font-bold text-cyan-600 duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+            <span className="flex h-full items-center px-4 text-xl font-bold text-purple-600 duration-300 group-hover:bg-purple-600 group-hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"

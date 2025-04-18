@@ -67,6 +67,9 @@ const Navbar = () => {
           {/* Desktop Auth Buttons */}
           {user ? (
             <div className="hidden lg:flex lg:items-center gap-x-2">
+             <div>
+              <img src={user?.photoURL} alt={user?.displayName} className="w-10 h-10 rounded-full" />
+              </div>
               <button
                 onClick={handleSignOut}
                 className="flex items-center cursor-pointer justify-center rounded-md bg-purple-800 hover:bg-white hover:text-purple-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"

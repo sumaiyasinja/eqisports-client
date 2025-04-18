@@ -38,7 +38,7 @@ const AddEquipment = () => {
     };
     console.log(equipment);
 
-    fetch('http://localhost:5000/equipments', {
+    fetch('https://sports-equipment-shop-server.vercel.app/equipments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

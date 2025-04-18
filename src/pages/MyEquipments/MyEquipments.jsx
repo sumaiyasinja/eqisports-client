@@ -18,7 +18,7 @@ const MyEquipments = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch (`http://localhost:5000/equipments/${id}`, {
+        fetch (`https://sports-equipment-shop-server.vercel.app/equipments/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

@@ -3,30 +3,30 @@ import { Link } from "react-router-dom";
 const EquipmentCard = ({equipment}) => {
     const {itemName, image,price,rating,  stockStatus, seller_name} = equipment;
     return (
-        <div className=" flex flex-col bg-white rounded-lg shadow-lg hover:shadow-gray-200 transition  dark:bg-gray-700">
-        <div>
+        <div className=" flex flex-col bg-white rounded-xl shadow-lg hover:shadow-gray-200 transition  dark:bg-gray-700 overflow-hidden">
+        <div className="rounded-lg">
           <img
-            className=" rounded-lg max-h-64 w-full py-4  mx-auto"
+            className=" rounded-lg max-h-64 w-11/12 py-4  mx-auto"
             src={image}
             alt={itemName}
           />
         </div>
 
-        <div className="flex flex-col gap-1 mt-4 px-4">
+        <div className="flex flex-col gap-1 mt-2 px-4">
           <h2 className="text-lg  hover:underline font-semibold text-purple-800 dark:text-gray-50">{itemName}</h2>
           <p className="text-black-400 dark:text-gray-50 ">Price: <span className=" dark:text-black-50">${price}</span></p>
           <p className="  text-black-400 dark:text-gray-50">Stock: {stockStatus}</p>
           <p className="  text-black-400 dark:tgray-50">Seller: {seller_name}</p>
         </div>
 
-        <div className="flex gap-1 mt-4 px-4">
+        <div className="flex gap-1 mt-2 px-4">
           <span className="sr-only">Rating</span>
          <span className="text-yellow-500">{rating}</span> <span className="text-yellow-500">★</span>
 
           
         </div>
 
-        <div className="mt-4 p-4 border-t border-gray-200 dark:border-gray-500">
+        <div className="mt-2 p-3 border-t border-gray-200 dark:border-gray-500">
           <Link to={`/equipments/${equipment._id}`} className="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
             <span className="text-base">View details</span>
             <svg

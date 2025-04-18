@@ -58,7 +58,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
+    <div className="relative w-full max-w-7xl mx-auto">
       {/* Progress Bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-white/10 rounded-full overflow-hidden z-20">
         <div

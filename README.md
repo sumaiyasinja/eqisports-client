@@ -4,11 +4,10 @@ platform where customers can browse, purchase, and review various sports
 accessories, from gear to apparel, catering to different sports disciplines. 
 
 ## live preview link 
-[EquiSports Online Shop](https://your-live-site-link.com)
+[EquiSports Online Shop](https://equisports-2641a.web.app)
 
 
 ## Features
-
 - Email, Google Authentication System
 - Category Based Product Filter
 - responsive for all device

@@ -77,16 +77,16 @@ const MyEquipments = () => {
                 <td className="px-4 py-2">${item.price}</td>
                 <td className="px-4 py-2">{item.stockStatus}</td>
                 <td className="px-4 py-2">{item.rating}⭐</td>
-                <td className="px-4 py-2 space-x-2">
+                <td className="px-4 py-2 space-x-2 flex items-center flex-col gap-2 justify-start">
                   <Link
                     to={`/equipments/update/${item._id}`}
-                    className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 flex items-center gap-1"
-                  >
+                    className="flex items-center cursor-pointer justify-center rounded-md bg-purple-800 hover:bg-white hover:text-purple-800 text-white px-6 gap-2 py-2 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
+                    >
                     <FaEdit /> Update
                   </Link>
                   <button
                     onClick={() => handleDelete(item._id)}
-                    className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 flex items-center gap-1"
+                    className="flex items-center cursor-pointer justify-center rounded-md bg-red-600 text-white hover:text-red-600 hover:bg-white px-6 gap-2 py-2   font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
                   >
                     <FaTrash /> Delete
                   </button>

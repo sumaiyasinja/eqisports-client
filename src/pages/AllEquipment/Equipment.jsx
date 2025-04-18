@@ -3,22 +3,20 @@ import { FaStar, FaDollarSign } from "react-icons/fa";
 import { MdOutlineCategory } from "react-icons/md";
 
 const Equipment = ({ equipment }) => {
-  const {
-    _id,
-    itemName,
-    image,
-    categoryName,
-    description,
-    price,
-    rating,
-  } = equipment;
+  const { _id, itemName, image, categoryName, price, rating } = equipment;
 
   return (
-    <tr className="hover:bg-gray-50 dark:hover:bg-gray-800 transition flex text-left   gap-2 justify-between">  
+    <tr className="hover:bg-purple-50  dark:hover:bg-gray-800 transition flex text-left   gap-2 justify-between">
       <td className="p-3">
-        <img src={image} alt={itemName} className="w-16 h-16 object-cover rounded" />
+        <img
+          src={image}
+          alt={itemName}
+          className="w-16 h-16 object-cover rounded"
+        />
       </td>
-      <td className="p-3 lg:w-[200px]  font-semibold text-gray-800 dark:text-gray-200">{itemName}</td>
+      <td className="p-3 lg:w-[200px]  font-semibold text-gray-800 dark:text-gray-200">
+        {itemName}
+      </td>
       <td className="p-3 lg:w-[150px] text-left text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
         <MdOutlineCategory /> {categoryName}
       </td>

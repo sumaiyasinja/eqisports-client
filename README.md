@@ -3,7 +3,9 @@ It is a Sports Equipment Online Store.  This is a sports accessories e-commerce 
 platform where customers can browse, purchase, and review various sports 
 accessories, from gear to apparel, catering to different sports disciplines. 
 
-## live preview link
+## live preview link 
+[EquiSports Online Shop](https://your-live-site-link.com)
+
 
 ## Features
 

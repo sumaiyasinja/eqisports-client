@@ -48,7 +48,7 @@ const AllEquipment = () => {
 
       <div className="overflow-x-auto rounded-xl shadow container mx-auto">
         <table className="min-w-full bg-white dark:bg-clr-dark table-auto">
-          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700 flex  flex-col">
             {sortedEquipments?.map(equipment => (
               <Equipment key={equipment._id} equipment={equipment} />
             ))}
